@@ -1,0 +1,6 @@
+node_modules/
+dist/
+landing/downloads/*.exe
+landing/downloads/*.blockmap
+*.log
+.env

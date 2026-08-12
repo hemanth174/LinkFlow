@@ -1,0 +1,23 @@
+{
+  "name": "linkflow",
+  "version": "0.1.0",
+  "description": "A quiet workspace for links, files, and meetings.",
+  "author": "LinkFlow",
+  "main": "desktop/main.js",
+  "repository": { "type": "git", "url": "https://github.com/YOUR_GITHUB_USERNAME/LinkFLow.git" },
+  "private": true,
+  "scripts": {
+    "dev:landing": "http-server landing -p 4173",
+    "build:landing": "tailwindcss -i ./landing/tailwind.css -o ./landing/tailwind-output.css --minify",
+    "create:icon": "node scripts/create-icon.js",
+    "dev:desktop": "electron desktop",
+    "build:desktop": "electron-builder --config desktop/electron-builder.json"
+  },
+  "devDependencies": {
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8",
+    "electron-updater": "^6.3.9",
+    "http-server": "^14.1.1",
+    "tailwindcss": "^3.4.17"
+  }
+}

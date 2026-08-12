@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+    <meta
+      name="description"
+      content="LinkFlow keeps your links, files, and meetings ready when you need them."
+    />
+    <title>LinkFlow | Keep your flow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      window.tailwind = window.tailwind || {};
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: "#171816",
+              muted: "#686c63",
+              lime: "#c8f36a",
+              paper: "#f4f3ee",
+              line: "#d9dbd2",
+            },
+            fontFamily: {
+              sans: ["Manrope", "Arial", "sans-serif"],
+              mono: ["DM Mono", "monospace"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="m-0 bg-paper font-sans text-ink">
+    <nav
+      class="mx-auto flex h-[88px] w-[calc(100%-48px)] max-w-[1180px] items-center justify-between border-b border-line max-[760px]:h-[72px]"
+    >
+      <a
+        class="text-[20px] font-extrabold tracking-[-.06em] no-underline"
+        href="#top"
+      >
+        <img
+          src="assets/logo.svg"
+          alt=""
+          class="mr-2 inline-block h-[27px] w-[27px] align-middle transition-transform duration-300 hover:rotate-12"
+        />
+        LinkFlow
+      </a>
+      <div class="flex gap-8 max-[760px]:hidden">
+        <a class="text-[13px] text-muted no-underline" href="#how"
+          >How it works</a
+        ><a class="text-[13px] text-muted no-underline" href="#features"
+          >Features</a
+        ><a class="text-[13px] text-muted no-underline" href="#download"
+          >Download</a
+        >
+      </div>
+      <a
+        class="border-b border-ink pb-[5px] text-[13px] font-bold no-underline max-[760px]:text-[11px]"
+        href="downloads/LinkFlow-Setup.exe"
+        download
+        >Get the app
+        <i
+          data-lucide="arrow-up-right"
+          class="ml-[5px] inline-block h-[14px] w-[14px] align-middle"
+        ></i
+      ></a>
+    </nav>
+
+    <main id="top">
+      <section
+        class="mx-auto grid min-h-[650px] w-[calc(100%-48px)] max-w-[1180px] grid-cols-2 items-center gap-[50px] max-[760px]:block max-[760px]:min-h-0 max-[760px]:py-[75px] max-[760px]:pb-20"
+      >
+        <div>
+          <p
+            class="animate-pulse font-mono text-[11px] font-medium uppercase tracking-[.1em] text-muted"
+          >
+            <span
+              class="mr-2 inline-block h-[7px] w-[7px] rounded-full bg-[#77b349]"
+            ></span
+            >A quiet workspace for your important things
+          </p>
+          <h1
+            class="my-6 max-w-[650px] text-[clamp(45px,6vw,78px)] font-bold leading-[.98] tracking-[-.085em] max-[760px]:text-[51px]"
+          >
+            Stop losing your flow in tabs, notes, and clipboard history.
+          </h1>
+          <p class="max-w-[480px] text-base leading-[1.7] text-muted">
+            LinkFlow lives in the background and keeps your links, PDFs, files,
+            and meeting moments one shortcut away.
+          </p>
+          <div
+            id="download"
+            class="mt-[34px] flex items-center gap-[18px] max-[760px]:block"
+          >
+            <a
+              class="group inline-flex items-center gap-[22px] rounded-[4px] bg-ink px-5 py-4 text-[13px] font-extrabold text-white no-underline transition-all duration-300 hover:-translate-y-1 hover:bg-[#30352d] hover:shadow-[0_12px_24px_#17181633]"
+              href="downloads/LinkFlow-Setup.exe"
+              download
+              >Download for Windows
+              <i
+                data-lucide="download"
+                class="h-[17px] w-[17px] text-lime transition-transform group-hover:translate-y-1"
+              ></i></a
+            ><span
+              class="font-mono text-[11px] text-muted max-[760px]:mt-[15px] max-[760px]:block"
+              >Windows 10 &amp; 11 · Free to start</span
+            >
+          </div>
+          <div
+            class="mt-[68px] font-mono text-[11px] text-muted max-[760px]:mt-[42px]"
+          >
+            <span class="mr-2 text-[17px] text-ink">⌘</span>Designed for focused
+            work
+            <span
+              class="mx-[15px] inline-block h-3 border-l border-line align-middle"
+            ></span
+            >No cloud upload required
+          </div>
+        </div>
+        <div
+          aria-label="LinkFlow floating capture widget preview"
+          class="relative h-[440px] overflow-hidden border border-[#d5d8cd] bg-[#e5e7df] max-[760px]:mt-[60px] max-[760px]:h-[350px]"
+        >
+          <div
+            class="absolute right-[-40px] top-[-110px] h-[370px] w-[370px] animate-pulse rounded-full bg-[#d5ec93] blur-[2px]"
+          ></div>
+          <div
+            class="absolute bottom-[-90px] left-[-30px] h-[240px] w-[240px] animate-bounce rounded-full bg-[#c4d9ec] opacity-80 [animation-duration:8s]"
+          ></div>
+          <div
+            class="absolute left-[42px] top-[105px] animate-pulse rounded-[30px] bg-ink px-5 py-[14px] text-[14px] text-white shadow-[0_18px_40px_#4c55342b] max-[760px]:left-5 max-[760px]:top-[65px] max-[760px]:text-[12px]"
+          >
+            Quick capture
+            <b
+              class="ml-3 font-mono text-[11px] text-lime max-[760px]:mt-[6px] max-[760px]:block"
+              >Ctrl + Shift + L</b
+            >
+          </div>
+          <div
+            class="absolute left-[42px] top-[164px] flex gap-[5px] rounded-[32px] bg-[#262824] p-[7px] shadow-[0_18px_40px_#4c55342b] max-[760px]:left-5 max-[760px]:top-[126px]"
+          >
+            <button
+              class="grid h-[42px] w-[42px] place-items-center rounded-full border-0 bg-lime text-ink"
+            >
+              <i data-lucide="plus" class="h-[22px] w-[22px]"></i></button
+            ><button
+              class="grid h-[42px] w-[42px] place-items-center rounded-full border-0 bg-transparent text-[#dfe3d8]"
+            >
+              <i data-lucide="file-text" class="h-[18px] w-[18px]"></i></button
+            ><button
+              class="grid h-[42px] w-[42px] place-items-center rounded-full border-0 bg-transparent text-[#dfe3d8]"
+            >
+              <i data-lucide="search" class="h-[18px] w-[18px]"></i></button
+            ><button
+              class="grid h-[42px] w-[42px] place-items-center rounded-full border-0 bg-transparent text-[#dfe3d8]"
+            >
+              <i data-lucide="more-horizontal" class="h-[18px] w-[18px]"></i>
+            </button>
+          </div>
+          <div
+            class="absolute bottom-[92px] left-[92px] flex w-[270px] animate-pulse items-center gap-3 bg-[#fbfcf7] p-4 shadow-[0_18px_40px_#4c55342b] [animation-duration:3s] max-[760px]:bottom-[46px] max-[760px]:left-[38px]"
+          >
+            <div
+              class="grid place-items-center bg-[#f2b6a4] px-[5px] py-[10px]"
+            >
+              <i data-lucide="file-type-2" class="h-[18px] w-[18px]"></i>
+            </div>
+            <div>
+              <b>Project brief.pdf</b
+              ><small class="mt-[7px] block font-mono text-[10px] text-muted"
+                >Saved to Work · just now</small
+              >
+            </div>
+            <span class="ml-auto grid place-items-center text-[#71a847]"
+              ><i data-lucide="check" class="w-[17px]"></i
+            ></span>
+          </div>
+          <div
+            class="absolute right-[88px] top-[180px] rotate-[-20deg] text-[42px]"
+          >
+            <i data-lucide="mouse-pointer-2" class="h-[42px] w-[42px]"></i>
+          </div>
+        </div>
+      </section>
+
+      <section class="overflow-hidden bg-lime">
+        <div
+          class="mx-auto flex h-[66px] w-[calc(100%-48px)] max-w-[1180px] items-center justify-between font-mono text-[11px] font-medium"
+        >
+          <span>DRAG IT IN</span
+          ><i
+            data-lucide="sparkles"
+            class="grid h-[17px] w-[17px] place-items-center"
+          ></i
+          ><span>FIND IT FAST</span
+          ><i
+            data-lucide="sparkles"
+            class="grid h-[17px] w-[17px] place-items-center"
+          ></i
+          ><span>KEEP MOVING</span
+          ><i
+            data-lucide="sparkles"
+            class="grid h-[17px] w-[17px] place-items-center"
+          ></i
+          ><span>DRAG IT IN</span
+          ><i
+            data-lucide="sparkles"
+            class="grid h-[17px] w-[17px] place-items-center"
+          ></i>
+        </div>
+      </section>
+
+      <section
+        class="mx-auto w-[calc(100%-48px)] max-w-[1180px] py-[130px] max-[760px]:py-[85px]"
+        id="features"
+      >
+        <div class="mb-[54px] flex items-end justify-between max-[760px]:block">
+          <div>
+            <p
+              class="font-mono text-[11px] font-medium uppercase tracking-[.1em] text-muted"
+            >
+              Everything in its place
+            </p>
+            <h2
+              class="my-[15px] max-w-[680px] text-[clamp(38px,5vw,65px)] leading-none tracking-[-.07em] max-[760px]:mb-10"
+            >
+              Your digital desk, without the mess.
+            </h2>
+          </div>
+        </div>
+        <div class="grid grid-cols-3 gap-[18px] max-[760px]:block">
+          <article class="border-t border-ink py-5 max-[760px]:mb-[55px]">
+            <span class="font-mono text-[11px] text-muted">01</span>
+            <h3 class="mb-4 mt-[60px] text-[25px] tracking-[-.06em]">
+              Drop anything.
+            </h3>
+            <p class="min-h-[72px] text-[14px] leading-[1.7] text-muted">
+              Drag in a URL, PDF, file, or folder. LinkFlow remembers where it
+              belongs without duplicating your files.
+            </p>
+            <div
+              class="mt-[34px] border border-dashed border-[#b9beb1] p-[18px] font-mono text-[11px] text-muted"
+            >
+              Drop to save
+              <span class="float-right grid text-ink"
+                ><i data-lucide="arrow-down-right"></i
+              ></span>
+            </div>
+          </article>
+          <article class="border-t border-ink py-5 max-[760px]:mb-[55px]">
+            <span class="font-mono text-[11px] text-muted">02</span>
+            <h3 class="mb-4 mt-[60px] text-[25px] tracking-[-.06em]">
+              See it at a glance.
+            </h3>
+            <p class="min-h-[72px] text-[14px] leading-[1.7] text-muted">
+              Visual previews and simple collections make the right item
+              recognizable before you open it.
+            </p>
+            <div class="mt-[34px] grid gap-[5px] font-mono text-[11px]">
+              <span class="flex items-center gap-2 bg-[#e7e8e1] p-2.5"
+                ><i data-lucide="link" class="h-[14px] w-[14px]"></i>Research
+                links</span
+              ><span class="flex items-center gap-2 bg-[#e7e8e1] p-2.5"
+                ><i data-lucide="notebook-pen" class="h-[14px] w-[14px]"></i
+                >Meeting notes</span
+              ><span class="flex items-center gap-2 bg-[#e7e8e1] p-2.5"
+                ><i data-lucide="folder" class="h-[14px] w-[14px]"></i>Project
+                files</span
+              >
+            </div>
+          </article>
+          <article class="border-t border-ink py-5 max-[760px]:mb-[55px]">
+            <span class="font-mono text-[11px] text-muted">03</span>
+            <h3 class="mb-4 mt-[60px] text-[25px] tracking-[-.06em]">
+              Never miss the moment.
+            </h3>
+            <p class="min-h-[72px] text-[14px] leading-[1.7] text-muted">
+              Add a meeting link and get a gentle reminder ten minutes before it
+              starts.
+            </p>
+            <div
+              class="mt-[34px] flex items-center gap-3 border border-[#b9beb1] bg-[#e7e8e1] p-[18px] font-mono text-[11px] text-ink"
+            >
+              <span class="grid text-[20px]"
+                ><i data-lucide="clock-3" class="h-5 w-5"></i></span
+              ><b>Standup in 10 min</b>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="bg-ink text-white" id="how">
+        <div
+          class="mx-auto grid w-[calc(100%-48px)] max-w-[1180px] grid-cols-2 gap-[100px] py-[130px] max-[760px]:block max-[760px]:py-[85px]"
+        >
+          <div>
+            <p
+              class="font-mono text-[11px] font-medium uppercase tracking-[.1em] text-[#a6aaa1]"
+            >
+              Built to disappear
+            </p>
+            <h2
+              class="my-[15px] max-w-[550px] text-[clamp(38px,5vw,65px)] leading-none tracking-[-.07em]"
+            >
+              One small shortcut. A lot less mental clutter.
+            </h2>
+            <p class="max-w-[470px] leading-[1.8] text-[#a6aaa1]">
+              Keep working in the app you are already using. When something
+              matters, press the shortcut, drop it in, and get right back to
+              your flow.
+            </p>
+            <a
+              class="mt-[25px] inline-block font-mono text-[12px] text-lime no-underline"
+              href="#download"
+              >Make room for focus
+              <i
+                data-lucide="arrow-up-right"
+                class="ml-[5px] inline-block h-[14px] w-[14px] align-middle"
+              ></i
+            ></a>
+          </div>
+          <div class="border-t border-[#45483e] max-[760px]:mt-[55px]">
+            <div
+              class="flex items-center gap-2 border-b border-[#45483e] py-[23px] font-mono text-[12px] text-[#a6aaa1]"
+            >
+              <kbd class="rounded-[3px] bg-[#30332d] px-2.5 py-2 text-white"
+                >Ctrl</kbd
+              ><kbd class="rounded-[3px] bg-[#30332d] px-2.5 py-2 text-white"
+                >Shift</kbd
+              ><kbd class="rounded-[3px] bg-[#30332d] px-2.5 py-2 text-white"
+                >L</kbd
+              ><span class="ml-auto"
+                >Open quick capture
+                <i
+                  data-lucide="command"
+                  class="ml-2 inline-block h-[14px] w-[14px] align-middle"
+                ></i
+              ></span>
+            </div>
+            <div
+              class="flex items-center gap-2 border-b border-[#45483e] py-[23px] font-mono text-[12px] text-[#a6aaa1]"
+            >
+              <kbd class="rounded-[3px] bg-[#30332d] px-2.5 py-2 text-white"
+                >Drag</kbd
+              ><span class="ml-auto"
+                >Save a link or file
+                <i
+                  data-lucide="download"
+                  class="ml-2 inline-block h-[14px] w-[14px] align-middle"
+                ></i
+              ></span>
+            </div>
+            <div
+              class="flex items-center gap-2 border-b border-[#45483e] py-[23px] font-mono text-[12px] text-[#a6aaa1]"
+            >
+              <kbd class="rounded-[3px] bg-[#30332d] px-2.5 py-2 text-white"
+                >10 min</kbd
+              ><span class="ml-auto"
+                >Get a meeting reminder
+                <i
+                  data-lucide="bell"
+                  class="ml-2 inline-block h-[14px] w-[14px] align-middle"
+                ></i
+              ></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="mx-auto w-[calc(100%-48px)] max-w-[1180px] py-[145px] text-center"
+      >
+        <p
+          class="font-mono text-[11px] font-medium uppercase tracking-[.1em] text-muted"
+        >
+          Your flow is waiting
+        </p>
+        <h2
+          class="mx-auto my-[15px] mb-[35px] max-w-[680px] text-[clamp(38px,5vw,65px)] leading-none tracking-[-.07em]"
+        >
+          Keep the good stuff close.
+        </h2>
+        <a
+          class="inline-flex items-center gap-[22px] rounded-[4px] bg-ink px-5 py-4 text-[13px] font-extrabold text-white no-underline"
+          href="downloads/LinkFlow-Setup.exe"
+          download
+          >Download LinkFlow
+          <i data-lucide="download" class="h-[17px] w-[17px]"></i
+        ></a>
+      </section>
+    </main>
+    <footer
+      class="mx-auto flex w-[calc(100%-48px)] max-w-[1180px] justify-between border-t border-line py-7 font-mono text-[11px] text-muted max-[760px]:block max-[760px]:leading-[2.3]"
+    >
+      <a
+        class="text-[16px] font-extrabold tracking-[-.06em] text-ink no-underline"
+        href="#top"
+        ><img
+          src="assets/logo.svg"
+          alt=""
+          class="mr-2 inline-block h-[27px] w-[27px] align-middle"
+        />LinkFlow</a
+      ><span class="max-[760px]:block"
+        >Links, files, and meetings. In flow.</span
+      ><span class="max-[760px]:block">© 2026 LinkFlow</span>
+    </footer>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "appId": "com.linkflow.desktop",
+  "productName": "LinkFlow",
+  "icon": "../assets/linkflow.ico",
+  "directories": {"output": "../dist"},
+  "publish": [{"provider": "github", "owner": "hemanth174", "repo": "LinkFLow"}],
+  "files": ["desktop/**/*", "assets/**/*", "package.json"],
+  "win": {"target": [{"target": "nsis", "arch": ["x64"]}], "icon": "../assets/linkflow.ico"},
+  "nsis": {"oneClick": false, "perMachine": false, "allowToChangeInstallationDirectory": true}
+}

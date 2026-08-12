@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>LinkFlow Quick Capture</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        color: #f7f8f2;
+        font-family: Arial, sans-serif;
+      }
+      .wrap {
+        padding: 12px;
+      }
+      .label,
+      .bar {
+        background: #191b18;
+        border: 1px solid #3d413a;
+        box-shadow: 0 10px 30px #0006;
+      }
+      .label {
+        display: inline-block;
+        border-radius: 25px;
+        padding: 10px 17px;
+        font-size: 13px;
+      }
+      .label b {
+        color: #c8f36a;
+        font-size: 10px;
+        margin-left: 8px;
+      }
+      .bar {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        width: max-content;
+        margin-top: 8px;
+        border-radius: 28px;
+        padding: 6px;
+      }
+      .bar button {
+        display: grid;
+        place-items: center;
+        width: 42px;
+        height: 38px;
+        border: 0;
+        border-radius: 21px;
+        background: #282c26;
+        color: #fff;
+        font-size: 17px;
+        cursor: pointer;
+      }
+      .bar button:first-child {
+        width: 76px;
+        background: #c8f36a;
+        color: #171816;
+        font-size: 22px;
+      }
+      .bar button:last-child {
+        font-size: 13px;
+        color: #aeb2a8;
+      }
+      .hint {
+        margin: 7px 0 0 14px;
+        color: #9ba096;
+        font: 10px monospace;
+      }
+      .drop {
+        border-color: #c8f36a !important;
+        transform: scale(1.02);
+      }
+      .pulse {
+        animation: pulse 1.4s ease-in-out infinite;
+      }
+      @keyframes pulse {
+        50% {
+          box-shadow:
+            0 0 0 7px #c8f36a22,
+            0 10px 30px #0006;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap" id="dropzone">
+      <div class="label">
+        <img
+          src="../assets/logo.svg"
+          width="16"
+          height="16"
+          style="vertical-align: middle; margin-right: 5px"
+        />Save anything <b>CTRL + SHIFT + L</b>
+      </div>
+      <div class="bar">
+        <button class="capture pulse" title="Capture clipboard">＋</button
+        ><button title="Choose a file">▣</button
+        ><button title="Paste clipboard">⌕</button
+        ><button title="More">•••</button>
+      </div>
+      <div class="hint" id="hint">
+        Drop a link or file here, or paste from your clipboard
+      </div>
+    </div>
+    <script>
+      const zone = document.getElementById("dropzone"),
+        hint = document.getElementById("hint");
+      function show(message) {
+        hint.textContent = message;
+        zone.classList.remove("pulse");
+      }
+      async function capture(item) {
+        await window.linkflow.capture(item);
+        show("Saved to LinkFlow ✓");
+        setTimeout(() => window.close(), 900);
+      }
+      document.querySelector(".capture").onclick = async () => {
+        const text = (await window.linkflow.readClipboard()).text;
+        if (text)
+          capture({
+            type: /^https?:\/\//i.test(text) ? "link" : "text",
+            value: text,
+            name: text.slice(0, 70),
+          });
+        else show("Clipboard is empty");
+      };
+      document.querySelectorAll(".bar button")[1].onclick = async () => {
+        const file = await window.linkflow.chooseFile();
+        if (file)
+          capture({
+            type: "file",
+            path: file,
+            name: file.split(/\\|\//).pop(),
+          });
+      };
+      document.querySelectorAll(".bar button")[2].onclick = () =>
+        document.querySelector(".capture").click();
+      zone.ondragover = (event) => {
+        event.preventDefault();
+        zone.classList.add("drop");
+        show("Drop to save");
+      };
+      zone.ondragleave = () => zone.classList.remove("drop");
+      zone.ondrop = (event) => {
+        event.preventDefault();
+        zone.classList.remove("drop");
+        const file = event.dataTransfer.files[0];
+        if (file) capture({ type: "file", path: file.path, name: file.name });
+        else if (event.dataTransfer.getData("text/uri-list"))
+          capture({
+            type: "link",
+            value: event.dataTransfer.getData("text/uri-list"),
+            name: "Saved link",
+          });
+      };
+    </script>
+  </body>
+</html>
