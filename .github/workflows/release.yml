@@ -16,9 +16,36 @@ jobs:
         with:
           node-version: 20
           cache: npm
+      - name: Cache Electron downloads
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/electron
+            ~/.cache/electron-builder
+          key: electron-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            electron-${{ runner.os }}-
       - run: npm ci
+      - name: Align package version with release tag
+        shell: pwsh
+        run: |
+          $version = "${{ github.ref_name }}".TrimStart('v')
+          npm version $version --no-git-tag-version
       - run: npm run create:icon
-      - run: npx electron-builder --config desktop/electron-builder.json --win --publish never
+      - name: Build Windows installer with retry
+        shell: pwsh
+        run: |
+          $maxAttempts = 4
+          for ($attempt = 1; $attempt -le $maxAttempts; $attempt++) {
+            Write-Host "Installer build attempt $attempt of $maxAttempts"
+            npx electron-builder --config desktop/electron-builder.json --win --publish never
+            if ($LASTEXITCODE -eq 0) { exit 0 }
+            if ($attempt -lt $maxAttempts) {
+              Write-Host "Electron download failed; waiting before retry..."
+              Start-Sleep -Seconds (15 * $attempt)
+            }
+          }
+          exit 1
       - name: Publish GitHub Release
         shell: pwsh
         env:
