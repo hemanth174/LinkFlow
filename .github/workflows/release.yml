@@ -25,7 +25,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           $installer = Get-ChildItem -Path . -Filter "*.exe" -Recurse |
-            Where-Object { $_.Name -notlike "*uninstaller*" -and $_.FullName -notlike "*node_modules*" } |
+            Where-Object { $_.Name -notlike "*uninstaller*" -and $_.FullName -notlike "*node_modules*" -and $_.DirectoryName -notlike "*win-unpacked*" } |
             Sort-Object Length -Descending |
             Select-Object -First 1
           if (-not $installer) { throw "LinkFlow installer was not found after the build." }
