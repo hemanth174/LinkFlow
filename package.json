@@ -1,10 +1,10 @@
 {
   "name": "linkflow",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A quiet workspace for links, files, and meetings.",
   "author": "LinkFlow",
   "main": "desktop/main.js",
-  "repository": { "type": "git", "url": "https://github.com/YOUR_GITHUB_USERNAME/LinkFLow.git" },
+  "repository": { "type": "git", "url": "https://github.com/hemanth174/LinkFlow.git" },
   "private": true,
   "scripts": {
     "dev:landing": "http-server landing -p 4173",

@@ -3,7 +3,7 @@
   "productName": "LinkFlow",
   "icon": "../assets/linkflow.ico",
   "directories": {"output": "../dist"},
-  "publish": [{"provider": "github", "owner": "hemanth174", "repo": "LinkFLow"}],
+  "publish": [{"provider": "github", "owner": "hemanth174", "repo": "LinkFlow"}],
   "files": ["desktop/**/*", "assets/**/*", "package.json"],
   "win": {"target": [{"target": "nsis", "arch": ["x64"]}], "icon": "../assets/linkflow.ico", "artifactName": "LinkFlow-Setup.${ext}"},
   "nsis": {"oneClick": false, "perMachine": false, "allowToChangeInstallationDirectory": true}

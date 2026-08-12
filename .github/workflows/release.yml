@@ -18,6 +18,6 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run create:icon
-      - run: npx electron-builder --win --publish always
+      - run: npx electron-builder --config desktop/electron-builder.json --win --publish always
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
