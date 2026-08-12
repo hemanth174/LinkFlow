@@ -18,6 +18,15 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run create:icon
-      - run: npx electron-builder --config desktop/electron-builder.json --win --publish always
+      - run: npx electron-builder --config desktop/electron-builder.json --win --publish never
+      - name: Publish GitHub Release
+        shell: pwsh
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          $installer = Get-ChildItem -Path . -Filter "LinkFlow-Setup*.exe" -Recurse | Select-Object -First 1
+          if (-not $installer) { throw "LinkFlow installer was not found after the build." }
+          $assets = @($installer.FullName)
+          $blockmap = Get-ChildItem -Path $installer.DirectoryName -Filter "*.blockmap" | Select-Object -First 1
+          if ($blockmap) { $assets += $blockmap.FullName }
+          gh release create "${{ github.ref_name }}" $assets --repo "hemanth174/LinkFlow" --title "LinkFlow ${{ github.ref_name }}" --generate-notes
