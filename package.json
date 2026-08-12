@@ -10,6 +10,7 @@
     "dev:landing": "http-server landing -p 4173",
     "build:landing": "tailwindcss -i ./landing/tailwind.css -o ./landing/tailwind-output.css --minify",
     "create:icon": "node scripts/create-icon.js",
+    "create:guide-pdf": "node scripts/create-guide-pdf.js",
     "dev:desktop": "electron desktop",
     "build:desktop": "electron-builder --config desktop/electron-builder.json"
   },

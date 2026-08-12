@@ -1,0 +1,791 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R 9 0 R 11 0 R 13 0 R] /Count 5 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 3393 >>
+stream
+BT
+/F1 10 Tf
+1 0 0 1 48 787 Tm
+/F2 16 Tf
+0 -22 Td
+(LinkFlow Project Guide) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F2 16 Tf
+0 -22 Td
+(1. What Is LinkFlow?) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(LinkFlow is a Windows desktop productivity app for saving links, files, folders, PDFs, clipboard) Tj
+/F1 10 Tf
+0 -14 Td
+(text, and meeting references in one place.) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(The app stays available in the background through a small floating widget and a system tray) Tj
+/F1 10 Tf
+0 -14 Td
+(icon. The main idea is simple: capture something quickly without opening Notepad or losing it in) Tj
+/F1 10 Tf
+0 -14 Td
+(clipboard history.) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F2 16 Tf
+0 -22 Td
+(2. Main Parts Of The Project) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(Landing Page) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(The `landing` folder contains the public product website. It explains LinkFlow and includes a) Tj
+/F1 10 Tf
+0 -14 Td
+(Windows download button.) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(Desktop App) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(The `desktop` folder contains the Electron Windows application. It controls the background) Tj
+/F1 10 Tf
+0 -14 Td
+(widget, tray menu, shortcut, capture actions, notifications, and local storage.) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(Assets) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(The `assets` folder contains the shared SVG and ICO logos used by the website, tray, and Windows) Tj
+/F1 10 Tf
+0 -14 Td
+(installer.) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(Scripts) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(The `scripts` folder contains tools for creating the Windows icon and building the installer.) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F2 16 Tf
+0 -22 Td
+(3. Important Files) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(• `desktop/main.js`: Electron main process and background behavior.) Tj
+/F1 10 Tf
+0 -14 Td
+(• `desktop/preload.js`: Safe bridge between the widget and Electron.) Tj
+/F1 10 Tf
+0 -14 Td
+(• `desktop/widget.html`: Floating capture widget UI.) Tj
+/F1 10 Tf
+0 -14 Td
+(• `desktop/electron-builder.json`: Windows installer and GitHub publishing configuration.) Tj
+/F1 10 Tf
+0 -14 Td
+(• `landing/index.html`: Landing page structure and Tailwind classes.) Tj
+/F1 10 Tf
+0 -14 Td
+(• `package.json`: Project scripts and dependencies.) Tj
+/F1 10 Tf
+0 -14 Td
+(• `.github/workflows/release.yml`: Automatic Windows release workflow.) Tj
+/F1 10 Tf
+0 -14 Td
+(• `vercel.json`: Static Vercel deployment configuration.) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F2 16 Tf
+0 -22 Td
+(4. How The Desktop App Works) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(When LinkFlow starts, Electron creates a transparent always-on-top window. The window loads) Tj
+/F1 10 Tf
+0 -14 Td
+(`widget.html` and places the widget near the bottom-right of the primary monitor.) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(The application also creates a system tray icon. The global shortcut `Ctrl + Shift + L` shows or) Tj
+/F1 10 Tf
+0 -14 Td
+(hides the widget.) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(When a user captures an item, the widget sends the data through the preload bridge. The main) Tj
+/F1 10 Tf
+0 -14 Td
+(process saves it to a local `items.json` file inside Electron's user-data directory and shows a) Tj
+/F1 10 Tf
+0 -14 Td
+(desktop notification.) Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 2281 >>
+stream
+BT
+/F1 10 Tf
+1 0 0 1 48 787 Tm
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(The current MVP supports clipboard text, URLs, files, folders, and drag-and-drop file capture.) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F2 16 Tf
+0 -22 Td
+(5. How To Run The Project) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(Install Node.js 20 or newer, then install dependencies from the project folder:) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(npm install) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(Run the landing page:) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(npm run dev:landing) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(Open `http://localhost:4173`.) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(Run the desktop app:) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(npm run dev:desktop) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(Press `Ctrl + Shift + L` to show or hide the widget.) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F2 16 Tf
+0 -22 Td
+(6. How To Test Capture) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(Clipboard URL) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F2 16 Tf
+0 -22 Td
+(1. Copy a URL such as `https://github.com`.) Tj
+/F2 16 Tf
+0 -22 Td
+(2. Open LinkFlow.) Tj
+/F2 16 Tf
+0 -22 Td
+(3. Click the plus button.) Tj
+/F2 16 Tf
+0 -22 Td
+(4. A saved notification should appear.) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(File Capture) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F2 16 Tf
+0 -22 Td
+(1. Open File Explorer.) Tj
+/F2 16 Tf
+0 -22 Td
+(2. Drag a file onto the widget.) Tj
+/F2 16 Tf
+0 -22 Td
+(3. LinkFlow saves the file path locally.) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(File Picker) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F2 16 Tf
+0 -22 Td
+(1. Click the file button.) Tj
+/F2 16 Tf
+0 -22 Td
+(2. Select a file or folder.) Tj
+/F2 16 Tf
+0 -22 Td
+(3. LinkFlow saves the selected path.) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F2 16 Tf
+0 -22 Td
+(7. Building The Windows Installer) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(The installer uses electron-builder and the LinkFlow ICO logo.) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(powershell -ExecutionPolicy Bypass -File .\\scripts\\build-installer.ps1) Tj
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 10 0 R >>
+endobj
+10 0 obj
+<< /Length 2679 >>
+stream
+BT
+/F1 10 Tf
+1 0 0 1 48 787 Tm
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(The installer is created in the parent `dist` folder and copied to:) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(landing\\downloads\\LinkFlow-Setup.exe) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(The installer is unsigned during development. Windows SmartScreen may display a warning for new) Tj
+/F1 10 Tf
+0 -14 Td
+(unsigned applications.) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F2 16 Tf
+0 -22 Td
+(8. Publishing On GitHub) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(The GitHub repository is:) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(https://github.com/hemanth174/LinkFlow) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(The repository must contain the project source code and the release workflow. To publish a) Tj
+/F1 10 Tf
+0 -14 Td
+(version, create a version tag:) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(npm version patch) Tj
+/F1 10 Tf
+0 -14 Td
+(git push origin main --follow-tags) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(The GitHub Action builds the Windows installer on a Windows runner and publishes it to GitHub) Tj
+/F1 10 Tf
+0 -14 Td
+(Releases.) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(The landing page downloads the latest installer from:) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(https://github.com/hemanth174/LinkFlow/releases/latest/download/LinkFlow-Setup.exe) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(That URL works only after a GitHub Release contains an asset with exactly that filename.) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F2 16 Tf
+0 -22 Td
+(9. How Updates Work) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(Every desktop update must have a new version number. For example:) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(• `0.1.0` becomes `0.1.1` for a patch.) Tj
+/F1 10 Tf
+0 -14 Td
+(• `0.1.0` becomes `0.2.0` for a feature release.) Tj
+/F1 10 Tf
+0 -14 Td
+(• `0.1.0` becomes `1.0.0` for a major release.) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(Packaged LinkFlow applications use `electron-updater` to check GitHub Releases. When a new) Tj
+/F1 10 Tf
+0 -14 Td
+(release is downloaded, the user receives a notification and the update is installed after) Tj
+/F1 10 Tf
+0 -14 Td
+(restart.) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(Development mode does not receive production updates.) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F2 16 Tf
+0 -22 Td
+(10. Deploying The Landing Page) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 12 0 R >>
+endobj
+12 0 obj
+<< /Length 2558 >>
+stream
+BT
+/F1 10 Tf
+1 0 0 1 48 787 Tm
+/F1 10 Tf
+0 -14 Td
+(The landing page is a static website and can be deployed with Vercel.) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(Use these Vercel settings:) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(Framework Preset: Other) Tj
+/F1 10 Tf
+0 -14 Td
+(Build Command: empty) Tj
+/F1 10 Tf
+0 -14 Td
+(Output Directory: landing) Tj
+/F1 10 Tf
+0 -14 Td
+(Install Command: npm install) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(The repository's `vercel.json` contains the same settings. After pushing changes to `main`,) Tj
+/F1 10 Tf
+0 -14 Td
+(Vercel automatically creates a new deployment.) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F2 16 Tf
+0 -22 Td
+(11. Common Problems) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(Python Was Not Found) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(The project does not need Python. Use `npm run dev:landing` after running `npm install`.) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(Electron Is Not Recognized) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(Run:) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(npm install) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(Then run `npm run dev:desktop`.) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(Download Shows 404) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(GitHub does not have a release asset named `LinkFlow-Setup.exe`. Publish a tagged release and) Tj
+/F1 10 Tf
+0 -14 Td
+(confirm the asset filename.) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(Vercel Says Output Directory Is Missing) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(Set the Output Directory to `landing` and leave the Build Command empty. Remove old Production) Tj
+/F1 10 Tf
+0 -14 Td
+(Overrides if they still contain another setting.) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(SmartScreen Warning) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(The installer is unsigned or has low reputation. A trusted Windows code-signing certificate is) Tj
+/F1 10 Tf
+0 -14 Td
+(required for professional distribution.) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F2 16 Tf
+0 -22 Td
+(12. Future Features) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(• Saved-items dashboard) Tj
+/F1 10 Tf
+0 -14 Td
+(• Collections and tags) Tj
+/F1 10 Tf
+0 -14 Td
+(• Search) Tj
+/F1 10 Tf
+0 -14 Td
+(• PDF and website previews) Tj
+/F1 10 Tf
+0 -14 Td
+(• Meeting scheduling) Tj
+/F1 10 Tf
+0 -14 Td
+(• Ten-minute reminders) Tj
+/F1 10 Tf
+0 -14 Td
+(• Broken-path relinking) Tj
+ET
+endstream
+endobj
+13 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 14 0 R >>
+endobj
+14 0 obj
+<< /Length 987 >>
+stream
+BT
+/F1 10 Tf
+1 0 0 1 48 787 Tm
+/F1 10 Tf
+0 -14 Td
+(• Settings and notification preferences) Tj
+/F1 10 Tf
+0 -14 Td
+(• Browser extension) Tj
+/F1 10 Tf
+0 -14 Td
+(• Cloud synchronization) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F2 16 Tf
+0 -22 Td
+(13. Learning Path) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F1 10 Tf
+0 -14 Td
+(Learn the project in this order:) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+/F2 16 Tf
+0 -22 Td
+(1. Read `package.json` to understand commands.) Tj
+/F2 16 Tf
+0 -22 Td
+(2. Read `desktop/main.js` to understand Electron.) Tj
+/F2 16 Tf
+0 -22 Td
+(3. Read `desktop/preload.js` to understand the safe IPC bridge.) Tj
+/F2 16 Tf
+0 -22 Td
+(4. Read `desktop/widget.html` to understand capture interactions.) Tj
+/F2 16 Tf
+0 -22 Td
+(5. Read `landing/index.html` to understand the website.) Tj
+/F2 16 Tf
+0 -22 Td
+(6. Read `desktop/electron-builder.json` to understand packaging.) Tj
+/F2 16 Tf
+0 -22 Td
+(7. Read `.github/workflows/release.yml` to understand deployment automation.) Tj
+/F1 10 Tf
+0 -14 Td
+() Tj
+ET
+endstream
+endobj
+xref
+0 15
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000141 00000 n 
+0000000211 00000 n 
+0000000286 00000 n 
+0000000422 00000 n 
+0000003867 00000 n 
+0000004003 00000 n 
+0000006336 00000 n 
+0000006473 00000 n 
+0000009205 00000 n 
+0000009343 00000 n 
+0000011954 00000 n 
+0000012092 00000 n 
+trailer
+<< /Size 15 /Root 1 0 R >>
+startxref
+13131
+%%EOF
