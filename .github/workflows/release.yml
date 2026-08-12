@@ -24,9 +24,14 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          $installer = Get-ChildItem -Path . -Filter "LinkFlow-Setup*.exe" -Recurse | Select-Object -First 1
+          $installer = Get-ChildItem -Path . -Filter "*.exe" -Recurse |
+            Where-Object { $_.Name -notlike "*uninstaller*" -and $_.FullName -notlike "*node_modules*" } |
+            Sort-Object Length -Descending |
+            Select-Object -First 1
           if (-not $installer) { throw "LinkFlow installer was not found after the build." }
-          $assets = @($installer.FullName)
+          $releaseInstaller = Join-Path (Get-Location) "LinkFlow-Setup.exe"
+          Copy-Item $installer.FullName $releaseInstaller -Force
+          $assets = @($releaseInstaller)
           $blockmap = Get-ChildItem -Path $installer.DirectoryName -Filter "*.blockmap" | Select-Object -First 1
           if ($blockmap) { $assets += $blockmap.FullName }
           gh release create "${{ github.ref_name }}" $assets --repo "hemanth174/LinkFlow" --title "LinkFlow ${{ github.ref_name }}" --generate-notes
