@@ -6,6 +6,9 @@
   "main": "desktop/main.js",
   "repository": { "type": "git", "url": "https://github.com/hemanth174/LinkFlow.git" },
   "private": true,
+  "dependencies": {
+    "electron-updater": "^6.3.9"
+  },
   "scripts": {
     "dev:landing": "http-server landing -p 4173",
     "build:landing": "tailwindcss -i ./landing/tailwind.css -o ./landing/tailwind-output.css --minify",
@@ -17,7 +20,6 @@
   "devDependencies": {
     "electron": "^33.2.1",
     "electron-builder": "^25.1.8",
-    "electron-updater": "^6.3.9",
     "http-server": "^14.1.1",
     "tailwindcss": "^3.4.17"
   }
